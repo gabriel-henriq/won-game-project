@@ -1,0 +1,9 @@
+{
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "prettier.endOfLine": "lf",
+  "emmet.triggerExpansionOnTab": true,
+  "editor.tabCompletion": "on"
+}
