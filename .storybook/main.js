@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   "stories": [
     "../src/components/**/stories.mdx",
@@ -8,5 +10,9 @@ module.exports = {
   ],
   features: {
     postcss: false,
+  },
+  webpackFinal: (config) => {
+    config.resolve.modules.push(`${process.cwd()}/src`);
+    return config;
   },
 }
