@@ -16,17 +16,41 @@ describe('<Heading />', () => {
       color: '#030517'
     })
   })
-  it('should render an border with a line left side and green color', () => {
+  it('should render an border with a line left side with pink color by default', () => {
     renderWithTheme(<Heading lineLeft>Won Games</Heading>)
+    expect(screen.getByRole('heading', { name: /won games/i })).toHaveStyle({
+      'border-left': '0.5rem solid #F231A5'
+    })
+  })
+  it('should render an border with a line left side and green color when color is passed', () => {
+    renderWithTheme(
+      <Heading lineLeft lineColor="secondary">
+        Won Games
+      </Heading>
+    )
     expect(screen.getByRole('heading', { name: /won games/i })).toHaveStyle({
       'border-left': '0.5rem solid #3CD3C1'
     })
   })
-  it('should render an border with a line bottom side and pink color', () => {
+  it('should render an border with a line bottom side with pink color by default', () => {
     renderWithTheme(<Heading lineBottom>Won Games</Heading>)
     expect(screen.getByRole('heading', { name: /won games/i })).toHaveStyleRule(
       'border-bottom',
       '0.5rem solid #F231A5',
+      {
+        modifier: '::after'
+      }
+    )
+  })
+  it('should render an border with a line bottom side with green color when color is passed', () => {
+    renderWithTheme(
+      <Heading lineBottom lineColor="secondary">
+        Won Games
+      </Heading>
+    )
+    expect(screen.getByRole('heading', { name: /won games/i })).toHaveStyleRule(
+      'border-bottom',
+      '0.5rem solid #3CD3C1',
       {
         modifier: '::after'
       }
