@@ -28,6 +28,10 @@ exports[`<Button /> should render the small size button when is passed 1`] = `
   font-size: 1.2rem;
 }
 
+.c0:hover {
+  background: linear-gradient(180deg,#e35565 0%,#d958a6 100%),linear-gradient(180deg,#ff5f5f -15%,#f062c0 103%,#f23131 103%);
+}
+
 <button
   class="c0"
 >
