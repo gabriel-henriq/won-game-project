@@ -14,7 +14,7 @@ const props = {
 describe('<Banner />', () => {
   it('should render correctly', () => {
     // verificar se o { title, subtlte, img } existe
-    renderWithTheme(<Banner {...props} />)
+    const { container } = renderWithTheme(<Banner {...props} />)
     //expect(screen.logTestingPlaygroundURL(container))
     expect(screen.getByRole('heading', { name: /defy death/i }))
       .toBeInTheDocument
@@ -22,5 +22,6 @@ describe('<Banner />', () => {
       screen.getByRole('heading', { name: /play the new crashlands season/i })
     ).toBeInTheDocument
     expect(screen.getByRole('img', { name: /defy death/i })).toBeInTheDocument
+    expect(container.firstChild).toMatchSnapshot()
   })
 })
