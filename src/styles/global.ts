@@ -37,15 +37,14 @@ const GlobalStyles: GlobalStyleComponent<
     src: local('Poppins SemiBold'), local('Poppins-SemiBold'),
         url('/fonts/poppins-v15-latin-600.woff2') format('woff2');
   }
-  * {
+  *,
+    &::before,
+    &::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    &::before,
-    &::after {
-      box-sizing: inherit;
     }
   }
   ${({ theme, removeBg }) => css`
